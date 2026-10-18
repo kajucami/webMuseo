@@ -24,10 +24,10 @@ const Home = () => {
         <Divider />
         <Socials />
         <Divider />
-        <div className="bg-white grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 mb-10 items-center">
-          <img className="w-full" src={pendo} alt="cueva del pendo" />
+        <div className="bg-black grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 mb-10 items-center">
+          <img className="w-full m-3 rounded-xl shadow-lg" src={pendo} alt="cueva del pendo" />
           <div className="p-4">
-            <h1 className="text-zinc-200 text-xl hover:text-2xl hover:font-extrabold hover:text-zinc-900 text-center">
+            <h1 className="text-zinc-900 text-xl hover:text-3xl hover:font-extrabold hover:text-white text-center">
               El Pendo como nunca lo habías visto
             </h1>
           </div>

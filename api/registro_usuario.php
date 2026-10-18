@@ -16,6 +16,7 @@ if ($conn->connect_error) {
 
 $data = json_decode(file_get_contents("php://input"), true);
 
+
 if (!isset($data['nombre']) || !isset($data['email']) || !isset($data['password'])) {
     die("Error: Datos incompletos");
 }

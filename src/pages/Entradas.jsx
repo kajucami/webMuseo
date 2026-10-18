@@ -106,16 +106,16 @@ const Entradas = () => {
       <header>
         <Header />
       </header>
-      <main className="flex justify-center mt-10">
-        <div className="grid grid-rows-2 grid-cols-2 gap-3 text-center bg-zinc-100 w-2/4 p-4 rounded-lg shadow-lg">
-          <div className="bg-white rounded-lg pt-6">
+      <main className="flex justify-center mt-10 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 auto-rows-min gap-3 text-center bg-zinc-100 w-full max-w-4xl p-3 md:p-4 rounded-lg shadow-lg">
+          <div className="min-w-0 bg-white rounded-lg pt-6 px-4 pb-4">
             <h2>Selecciona una fecha</h2>
             <div className="my-4">
               <FontAwesomeIcon className="w-6 h-6 p-2" icon={faCalendarDays} />
               <FontAwesomeIcon className="w-6 h-6 p-2 " icon={faArrowDown} />
             </div>
             <DatePicker
-              className="bg-zinc-300 rounded-lg text-center"
+              className="w-full max-w-full box-border bg-zinc-300 rounded-lg text-center p-2"
               value="fechaEntrada"
               selected={selectedDate}
               onChange={handleDateChange}
@@ -130,25 +130,27 @@ const Entradas = () => {
             </div>
           </div>
 
-          <div className="grid grid-rows-2 gap-4 text-center p-4 bg-zinc-200 rounded-lg shadow-lg">
+          <div className="grid min-w-0 gap-4 text-center p-4 bg-zinc-200 rounded-lg shadow-lg">
             <h2 className="font-bold">Información del Comprador</h2>
             <Divider />
-            <label>Nombre</label>
+            <label htmlFor="nombre-comprador">Nombre</label>
             <input
-              className="rounded-full mx-4 text-center p-2"
+              id="nombre-comprador"
+              className="w-full min-w-0 box-border rounded-full text-center p-2"
               type="text"
               value={nombre}
               onChange={handleNombreChange}
             />
-            <label>Correo Electrónico:</label>
+            <label htmlFor="email-comprador">Correo Electrónico:</label>
             <input
+              id="email-comprador"
               type="email"
-              className="rounded-full mx-4 text-center p-2"
+              className="w-full min-w-0 box-border rounded-full text-center p-2"
               value={email}
               onChange={handleEmailChange}
             />
           </div>
-          <div className="pt-2 grid justify-center gap-3 p col-span-2">
+          <div className="pt-2 grid justify-center gap-3 col-span-full">
             <Divider />
             <label>Cantidad de Entradas:</label>
             <div className="flex items-center justify-center space-x-4">
@@ -205,8 +207,8 @@ const Entradas = () => {
               </Checkbox>
             </CheckboxGroup>
           </div>
-          <Divider className="col-span-2" />
-          <div className="flex col-span-2 justify-between p-4 mx-20">
+          <Divider className="col-span-full" />
+          <div className="flex flex-col sm:flex-row col-span-full items-center justify-between gap-4 p-4">
             <label>
               Acepto las condiciones
               <Checkbox
@@ -223,9 +225,9 @@ const Entradas = () => {
               Comprar Entrada
             </button>
           </div>
-          <Divider className="col-span-2" />
+          <Divider className="col-span-full" />
           {showResume && (
-            <div className="col-span-2 ">
+            <div className="min-w-0 col-span-full">
               <Card className="text-sky-900">
                 <h1 className="font-black p-4">RESUMEN DE COMPRA</h1>
                 <Divider />
